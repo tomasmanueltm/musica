@@ -1,0 +1,75 @@
+@font-face 
+    font-family: "Lato"
+    src: url("../icon/Lato.ttf")
+@font-face 
+    font-family: "Linotte"
+    src: url("../icon/Linotte.otf")
+    
+*
+    margin: 0px
+    padding: 0px
+    list-style: none
+    font-family: Linotte
+    text-decoration: none
+    box-sizing: border-box
+    scroll-behavior: smooth
+
+::scrollbar  
+    width: 0px!important
+*::scrollbar  
+    width: 0px!important
+*::-webkit-scrollbar 
+    width: 0px!important
+*::-moz-scrollbar 
+    width: 0px!important
+*::-ms-scrollbar 
+    width: 0px!important
+*::-moz-osx-scrollbar
+    width: 0px!important
+*::-o-scrollbar
+    width: 0px!important
+
+@mixin padrao($padding: 2.3rem, $width: 100%)
+    width: $width
+    padding: $padding
+
+@mixin flex($align: normal, $justify: center, $direction: row, $gap: 0px)
+    display: flex
+    align-items: $align
+    justify-content: $justify
+    flex-direction: $direction
+    gap: $gap
+    
+@mixin grid($colums: 1, $gap : 10px)
+    display: grid
+    grid-template-columns: repeat($colums,1fr)
+    grid-gap: $gap
+
+@mixin font-tex
+    padding: 0 1rem
+    h5
+        color: #ccc
+        letter-spacing: 1.5px
+        font-size: 1rem
+    span
+        color: #999
+        font-size: .8rem
+        font-weight: 900
+        font-family: Lato
+
+
+@mixin table
+    @media ( max-width:  768px)
+        @content
+        
+@mixin mobile-l
+    @media ( max-width:  577px)
+        @content
+
+@mixin mobile-m
+    @media ( max-width:  375px)
+        @content
+
+@mixin mobile-s
+    @media ( max-width:  320px)
+        @content

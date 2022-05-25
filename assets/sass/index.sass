@@ -1,0 +1,301 @@
+@import "__"
+@import url("../icon/icons.css")
+
+body
+    background: #673ab7, #3f51b5,  #040515
+    overflow-x: hidden
+    // @include flex (normal, space-beetwen, baseline, row)
+
+.none
+    display: none
+
+
+
+.painel
+    float: left
+    height: 100vh
+    background: rgb(16, 16, 47)
+    @include padrao(3rem 0, 20%)
+    @include flex(stretch, space-between,column)
+
+    @include table
+        bottom: 0px
+        width: 100%
+        height: 100px
+        display: block
+        padding: 2rem 0
+        position: fixed
+
+    .div-perfil
+        // background: red
+        padding: 0 1rem
+        position: relative
+        @include flex(center, flex-start,column,20px)
+
+        @include table
+            @include flex(center, flex-start, row, 20px)
+            
+            .img
+                overflow: hidden
+                border-radius: 50px
+                width: 50px!important
+                height: 50px!important
+            
+        .img
+            width: 100px
+            height: 100px
+            overflow: hidden
+            border-radius: 50%
+            background: #ccc
+
+            img
+                width: 100%
+                height: 100%
+                border: none
+                outline: none
+                object-fit: cover
+
+        .legenda
+            text-align: center
+
+            
+
+            h5
+                color: #fff
+                font-size: 1rem
+                font-weight: 900
+                letter-spacing: .1rem
+            a
+                color: #999
+                display: block
+                padding: 5px 2px
+                font-weight: 600
+                font-size: .9rem
+                vertical-align: middle
+
+                i
+                    padding: 2px
+            div 
+                top: 20px
+                right: 20px
+                width:  35px
+                display: none!important
+                cursor: pointer
+                position: absolute
+                transition: all .8s cubic-bezier(0.48, 0.55, 0.32, 1.08)
+                border-top: 3px solid #ccc
+
+                @include table
+                    display: unset!important
+
+                &.true
+                    width:  20px
+                    display: block
+                    transition: all .8s linear
+
+                    &::after
+                        width: 35px
+                        transition: all 1s cubic-bezier(0.48, 0.55, 0.32, 1.08)
+
+                &::after
+                    content: ""
+                    width: 20px
+                    float: right
+                    margin: .0rem 0
+                    padding: .1rem 0
+                    transition: all 1s cubic-bezier(0.48, 0.55, 0.32, 1.08)
+                    border-bottom: 3px solid #ccc
+            @include table
+                text-align: left
+    .menu
+        width: 100%
+        padding: 1rem 1.6rem
+        @include table
+            display: none
+
+           
+            &._
+                top: 0px
+                left: 0px
+                height: 80.5%
+                display: block
+                padding: 2rem 0
+                position: fixed
+                background: rgb(16, 16, 47)
+                transition: all .4s ease-out
+            
+
+        ul
+            width: 80%
+            margin: 0 auto
+            padding: .8rem 0 1rem
+            border-top: 1px solid #ccc
+            
+            li
+                padding: .4rem 0
+                a
+                    color: #fff
+                    span
+                        padding: 0 .8rem
+                        font-weight: 400
+                        font-family: Lato
+            &:last-child
+                li
+                    a
+                        margin: 0 10px 0 0
+.container
+    z-index: 0
+    float: right
+    width: 500px
+    height: 100vh
+    overflow: hidden
+    // position: relative
+    background: #0b011c
+    @include padrao(1rem 2.5rem, 80%)    
+    @include table
+        width: 100%
+        overflow-y: auto
+
+    .formSeach
+        @include padrao(0px)
+        
+        i
+            top: -0px
+            color: #ccc
+            font-size: .9rem
+            position: relative
+        input
+            border: none 
+            outline: none
+            width: 300px
+            margin: 0 10px
+            font-size: 1rem
+            font-weight: 900
+            padding: 8px 5px 4px
+            letter-spacing: 1px
+            color: #fff!important
+            background: transparent
+            @include table
+                width: 200px
+    .catalogo
+        @include padrao(1.5rem 0 0)
+
+        h3
+            color: #fff
+        .catalogo-items
+            width: inherit
+            overflow-x: auto
+            @include grid(4, 2rem)
+            @include padrao(1.2rem 0 0)
+
+
+            li
+                float: left
+                width: 400px
+                display: inline-block
+
+                .img
+                    height: 200px
+                    overflow: hidden
+                    border-radius: 5px
+                    background: #ccc
+
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                        object-position: center
+
+                .legenda
+                    padding: 1rem 0
+
+                    h4
+                        color: #fff
+                        font-weight: 900
+                        font-size: 1.2rem
+                    span
+                        color: #ccc
+                        font-size: .9rem
+                        font-weight: 700
+                        font-family: Lato
+    .extender
+        @include flex(baseline,space-between)
+        @include table
+                padding-bottom: 3rem
+                @include flex(null,null, column)
+        .albums
+            width: 350px
+            height: 200px
+            @include table
+                width: 100%
+                margin: 0 0 3rem
+
+            h3
+                color: #fff
+            .artigos
+                padding: 1rem 0
+                .item
+                    margin: 0 0 .8rem
+                    @include flex(center,space-between)
+                    
+                    div
+                        @include flex(center,space-between)
+                        img
+                            width: 50px
+                            height: 50px
+                            overflow: hidden
+                            object-fit: cover
+                            background: #fff
+                            border-radius: 5px
+                        hgroup
+                            @include font-tex
+
+                    p
+                        color: #999
+                        font-size: .8rem
+                        font-weight: 900
+                        font-family: Lato
+        .musicas
+            width: 500px
+            overflow: hidden
+
+            @include table
+                width: 100%
+                padding: 1rem 0
+
+            h3
+                color: #fff
+
+            ul.sons
+                width: inherit
+                padding: 1rem 0
+                overflow-x: auto
+                @include grid(4, 1rem)
+
+                li
+                    width: 150px
+
+                    .img
+                        height: 90px
+                        padding: 0px
+                        width: inherit
+                        overflow: hidden
+                        border-radius: 8px
+
+                        img
+                            width: 100%
+                            height: 100%
+                            object-fit: cover
+                            object-position: top
+                    div
+                        @include font-tex
+                        padding: 1rem 0
+
+
+
+
+
+
+
+
+
