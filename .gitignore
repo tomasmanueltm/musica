@@ -3,5 +3,8 @@
 *.sass
 *.min.css
 
+.sass
+.min.css
+
 assets/sass/.sass
 assets/sass/.min.css
